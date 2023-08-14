@@ -1,0 +1,318 @@
+[gd_scene load_steps=65 format=2]
+
+[ext_resource path="res://Enemies/Boss Idle-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Shadows/LargeShadow.png" type="Texture" id=2]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Creature 2.gd" type="Script" id=4]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Overlap/SoftCollision.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/WanderController.tscn" type="PackedScene" id=9]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=10]
+[ext_resource path="res://Lighting/Orb Green.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Effects/Boss attack(1).png" type="Texture" id=12]
+[ext_resource path="res://Effects/Boss attack(2).png" type="Texture" id=13]
+[ext_resource path="res://Effects/Boss attack(3).png" type="Texture" id=14]
+[ext_resource path="res://Effects/Boss attack(4).png" type="Texture" id=15]
+
+[sub_resource type="ShaderMaterial" id=64]
+resource_local_to_scene = true
+shader = ExtResource( 10 )
+shader_param/active = false
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 12 )
+region = Rect2( 564, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 12 )
+region = Rect2( 1128, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 12 )
+region = Rect2( 1692, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 12 )
+region = Rect2( 2256, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 12 )
+region = Rect2( 2820, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 12 )
+region = Rect2( 3384, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 12 )
+region = Rect2( 3948, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 13 )
+region = Rect2( 564, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 13 )
+region = Rect2( 1128, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 13 )
+region = Rect2( 1692, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 13 )
+region = Rect2( 2256, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 13 )
+region = Rect2( 2820, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 13 )
+region = Rect2( 3384, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 13 )
+region = Rect2( 3948, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 14 )
+region = Rect2( 564, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 14 )
+region = Rect2( 1128, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 14 )
+region = Rect2( 1692, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 14 )
+region = Rect2( 2256, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 14 )
+region = Rect2( 2820, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 14 )
+region = Rect2( 3384, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 14 )
+region = Rect2( 3948, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 15 )
+region = Rect2( 564, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 15 )
+region = Rect2( 1128, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 15 )
+region = Rect2( 1692, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 15 )
+region = Rect2( 2256, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 15 )
+region = Rect2( 2820, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 15 )
+region = Rect2( 3384, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 564, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 1128, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 1692, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 2256, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 2820, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 3384, 0, 564, 564 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 3948, 0, 564, 564 )
+
+[sub_resource type="SpriteFrames" id=65]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 53.5, 31 )
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 60.0
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 24.0832
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 42.19
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 63.3246
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+
+[sub_resource type="Animation" id=12]
+resource_name = "Start"
+length = 0.2
+loop = true
+
+[sub_resource type="Animation" id=13]
+resource_name = "Stop"
+length = 0.1
+
+[node name="Creature 2" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 4 )
+
+[node name="Orb Green" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( -45, 2 )
+
+[node name="Orb Green2" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 0, 19 )
+
+[node name="Orb Green3" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 32, -152 )
+
+[node name="Orb Green4" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 31, -161 )
+
+[node name="Orb Green5" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 31, -154 )
+
+[node name="Orb Green6" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 7, -35 )
+
+[node name="AnimationSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 64 )
+position = Vector2( 11, -246 )
+scale = Vector2( 1.01389, 1.23395 )
+frames = SubResource( 65 )
+animation = "Attack"
+frame = 26
+playing = true
+offset = Vector2( 0, -12 )
+
+[node name="ShadowSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -2, 22 )
+scale = Vector2( 4.55, 3.625 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 4, 4 )
+shape = SubResource( 24 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+visible = false
+position = Vector2( -2, -2 )
+shape = SubResource( 8 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health = 18
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+modulate = Color( 1, 1, 1, 0.454902 )
+shape = SubResource( 9 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 7 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+visible = false
+position = Vector2( 0, 1 )
+shape = SubResource( 10 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+visible = false
+shape = SubResource( 11 )
+
+[node name="WanderController" parent="." instance=ExtResource( 9 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 15 )
+anims/Start = SubResource( 12 )
+anims/Stop = SubResource( 13 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
+[connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]
